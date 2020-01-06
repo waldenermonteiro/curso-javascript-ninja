@@ -9,7 +9,7 @@ para o contrário.
 */
 var isTruthy = function(a) {
     return !!a
-}
+};
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
 isTruthy(0)
@@ -60,21 +60,21 @@ var carro = {
 Crie um método chamado `mudarCor` que mude a cor do carro conforme a cor
 passado por parâmetro.
 */
-function mudarCor(cor){
+carro.mudarCor = function (cor){
     carro.cor = cor
 }
 
 /*
 Crie um método chamado `obterCor`, que retorne a cor do carro.
 */
-function obterCor(){
+carro.obterCor = function (){
     return carro.cor
 }
 
 /*
 Crie um método chamado `obterModelo` que retorne o modelo do carro.
 */
-function obterModelo(){
+carro.obterModelo = function (){
     return carro.modelo
 }
 
@@ -82,7 +82,7 @@ function obterModelo(){
 /*
 Crie um método chamado `obterMarca` que retorne a marca do carro.
 */
-function obterMarca(){
+carro.obterMarca = function (){
     return carro.marca
 }
 
@@ -91,8 +91,8 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 "Esse carro é um [MARCA] [MODELO]"
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
-function obterMarcaModelo(){
-    return `Esse carro é um ${obterMarca()} ${obterModelo()}`
+carro.obterMarcaModelo = function (){
+    return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`
 }
 
 /*
@@ -111,12 +111,14 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-function adicionarPessoas(numeroPessoas){
+carro.adicionarPessoas = function (numeroPessoas){
     //carro.quantidadesPessoas += numeroPessoas <  quantidadePessoas ? numeroPessoas : numeroPessoas - quantidadePessoas
-    var diferença = 5 - carro.quantidadesPessoas
+    var diferença = carro.assentos - carro.quantidadesPessoas
+    var somaQuantidadePessoas =  carro.quantidadesPessoas + numeroPessoas
+    if(carro.quantidadesPessoas === carro.assentos && somaQuantidadePessoas >= carro.assentos) return 'O carro está lotado'
     carro.quantidadesPessoas += numeroPessoas
-    if(carro.quantidadesPessoas === 5) return 'O carro está lotado'
-    if((numeroPessoas +carro.quantidadePessoas) >= 5  ) return `Só cabem mais ${diferença} ${diferença === 1 ? 'pessoa': 'pessoas'}!`
+    var pluralOuSingular = diferença === 1 ? 'pessoa': 'pessoas'
+    if(somaQuantidadePessoas >= carro.assentos  ) return `Só cabem mais ${diferença} ${pluralOuSingular}!`
     return `Já temos ${carro.quantidadePessoas} pessoas no carro!`
 
 }
@@ -129,38 +131,38 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-obterCor()
+carro.obterCor() //azul
 
 // Mude a cor do carro para vermelho.
-mudarCor('vermelho')
+carro.mudarCor('vermelho') //vermelho
 
 // E agora, qual a cor do carro?
-//vermelho
+carro.obterCor() //vermelho
 
 // Mude a cor do carro para verde musgo.
-mudarCor('verde musgo')
+carro.mudarCor('verde musgo')
 
 // E agora, qual a cor do carro?
-//verde musgo
+carro.obterCor() //verde musgo
 
 // Qual a marca e modelo do carro?
-obterMarcaModelo()
+carro.obterMarcaModelo()
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2) // Já temos duas pessoas no carro
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4) // Só cabem mais 3 pessoas
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3) // Já temos 5 pessoas no carro
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4) // Já temos 1 pessoa no carro
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10) // Só cabem mais 4 pessoas
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas // 1 pessoa
 ```
