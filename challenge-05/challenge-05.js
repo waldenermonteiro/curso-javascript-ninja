@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var myarray = ['junior', 22, true, false, undefined]
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function returnArray(array) {
+    return array
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log(returnArray(myarray)[1])
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,20 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function returnArrayInIndice(array, i) {
+    return array[i]
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var myarray2 = ['junior', 22, true, false, undefined]
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log(returnArrayInIndice(myarray2, 4))
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,7 +51,28 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book() {
+    var object = {
+        'Código da Vinci': {
+            quantidadePaginas: 300,
+            autor: 'Dan Brown',
+            editora : 'Pocket Books'
+        },
+        'Anjos e Demônios': {
+            quantidadePaginas: 320,
+            autor: 'Dan Brown',
+            editora : 'Pocket Books'
+        },
+        'Inferno': {
+            quantidadePaginas: 330,
+            autor: 'Dan Brown',
+            editora : 'Pocket Books'
+        }
+
+    }
+
+
+}
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
