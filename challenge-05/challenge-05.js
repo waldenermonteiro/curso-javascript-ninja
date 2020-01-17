@@ -35,6 +35,10 @@ var myarray2 = ['junior', 22, true, false, undefined]
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
+console.log(returnArrayInIndice(myarray2, 0))
+console.log(returnArrayInIndice(myarray2, 1))
+console.log(returnArrayInIndice(myarray2, 2))
+console.log(returnArrayInIndice(myarray2, 3))
 console.log(returnArrayInIndice(myarray2, 4))
 
 /*
@@ -51,7 +55,7 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-function book() {
+function book(book) {
     var object = {
         'Código da Vinci': {
             quantidadePaginas: 300,
@@ -71,31 +75,33 @@ function book() {
 
     }
 
+    return book ? object[book]: object
+
 
 }
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book())
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log(`O livro Anjos e demonios tem ${book('Anjos e Demônios').quantidadePaginas} páginas`)
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log(`O autor do livro Código da Vinci é ${book('Código da Vinci').autor}`)
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log(`O livro Código da Vinci foi publicado pela editora ${book('Código da Vinci').editora}`)
